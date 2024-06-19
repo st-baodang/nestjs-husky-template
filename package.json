@@ -21,11 +21,11 @@
     "prepare": "husky"
   },
   "lint-staged": {
-    "*.{js,ts,jsx,tsx}": [
+    "*.{ts}": [
       "npm run lint",
       "npm run format"
     ],
-    "*.{json,html}": [
+    "*.{json}": [
       "prettier --write --ignore-unknown"
     ]
   },
