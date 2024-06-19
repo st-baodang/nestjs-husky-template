@@ -1,0 +1,1 @@
+cat .husky/commit-msg-linter.js | node --input-type=commonjs
