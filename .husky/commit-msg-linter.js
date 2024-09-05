@@ -12,15 +12,10 @@ const fs = require("fs");
 try {
   // eslint-disable-next-line global-require
   supportsColor = require("supports-color");
-} catch (error) {
-  // DO NOTHING
-  // on MODULE_NOT_FOUND when installed by pnpm
-}
-
+} catch (error) {/*just in case*/}
+ 
 const colorSupported = supportsColor.stdout;
 
-const YELLOW = colorSupported ? "\x1b[1;33m" : "";
-const GRAY = colorSupported ? "\x1b[0;37m" : "";
 const RED = colorSupported ? "\x1b[0;31m" : "";
 const GREEN = colorSupported ? "\x1b[0;32m" : "";
 const BLUE = colorSupported ? "\x1b[1;34m" : "";
@@ -71,16 +66,6 @@ const successMsgs = [
   `\n${GREEN}*********** “You is kind. You is smart. You is important.” ***********${EOS}`,
   `\n${GREEN}*********** Lorem ipsum dolor sit amet, consectetur adipiscing... ***********${EOS}`,
   `\n${GREEN}*********** My mama always said life was like a box of chocolates. You never know what you're gonna get. ***********${EOS}`,
-  `
-█▄█ ▄▀█ █░█ █▀█ █▀█ █
-░█░ █▀█ █▀█ █▄█ █▄█ ▄`,
-  `
-██████╗░░█████╗░░██╗░░░░░░░██╗███████╗██████╗░
-██╔══██╗██╔══██╗░██║░░██╗░░██║██╔════╝██╔══██╗
-██████╔╝██║░░██║░╚██╗████╗██╔╝█████╗░░██████╔╝
-██╔═══╝░██║░░██║░░████╔═████║░██╔══╝░░██╔══██╗
-██║░░░░░╚█████╔╝░░╚██╔╝░╚██╔╝░███████╗██║░░██║
-╚═╝░░░░░░╚════╝░░░░╚═╝░░░╚═╝░░╚══════╝╚═╝░░╚═╝`,
 ];
 
 const failMsgs = [
